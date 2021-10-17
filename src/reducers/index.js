@@ -1,12 +1,13 @@
 
 // the reducer function(our cashier who dispatches actions to store)
 const red = (state, action) => {
-    if(action.type === "SET_TECHNOLOGIES" ) {
+    if(action.type === "WITHDRAW_AMOUNT" ) { //perform the withdrawal
+        let total = state.balance;
             return {
                 ...state,
-                tech: action.text
+                balance: (total - action.balance)
     }
-} else {
+}else {
     return state
 }
 
